@@ -1,16 +1,16 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe "products/show", type: :view do
-  before(:each) do
-    @product = assign(:product, Product.create!(
-      code: "Code",
-      name: "Name"
-    ))
-  end
+# RSpec.describe "products/show", type: :view do
+#   before(:each) do
+#     @product = assign(:product, Product.create!(
+#       code: "Code",
+#       name: "Name"
+#     ))
+#   end
 
-  it "renders attributes in <p>" do
-    render
-    expect(rendered).to match(/Code/)
-    expect(rendered).to match(/Name/)
-  end
-end
+#   it "renders attributes in <p>" do
+#     render
+#     expect(rendered).to match(/Code/)
+#     expect(rendered).to match(/Name/)
+#   end
+# end
