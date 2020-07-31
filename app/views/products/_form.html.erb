@@ -21,6 +21,15 @@
     <%= form.text_field :name %>
   </div>
 
+  <div class="field">
+  <% Color.all.each do |color| %>
+    <div style='display: inline-block'>
+      <%= label_tag color.name %>
+      <%= check_box_tag "product[color_ids][]", color.id, @product.colors.include?(color) %>
+    </div>
+  <% end %>
+</div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
