@@ -15,5 +15,10 @@
   <%= @product.colors.map(&:name).join(', ') %>
 </p>
 
+<p>
+  <strong>Categories:</strong>
+  <%= @product.categories.map(&:name).join(', ') %>
+</p>
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

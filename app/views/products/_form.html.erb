@@ -28,8 +28,16 @@
       <%= check_box_tag "product[color_ids][]", color.id, @product.colors.include?(color) %>
     </div>
   <% end %>
-</div>
+  </div>
 
+  <div class="field">
+  <% Category.all.each do |category| %>
+    <div style='display: inline-block'>
+      <%= label_tag category.name %>
+      <%= check_box_tag "product[category_ids][]", category.id, @product.categories.include?(category) %>
+    </div>
+  <% end %>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>
