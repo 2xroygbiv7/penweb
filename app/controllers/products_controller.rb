@@ -2,7 +2,13 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
-    @products = Product.all
+    if params[:category]
+      @products = Product.by_category(params[:category]).all
+    else
+      @products = Product.all
+    end
+
+  # Product.joins(:categories).where("categories.name = ?", "energel")
   end
 
   def show
@@ -57,6 +63,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:code, :name, color_ids: [])
+      params.require(:product).permit(:code, :name, color_ids: [], category_ids: [] )
     end
 end
