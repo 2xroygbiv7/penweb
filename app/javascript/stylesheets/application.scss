@@ -1,3 +1,16 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+
+.btn {
+  @apply px-8 py-4 rounded;
+}
+
+.btn-teal {
+  @apply bg-teal-500 text-white font-bold;
+}
+
+.btn-teal:hover {
+  @apply bg-teal-700;
+}
